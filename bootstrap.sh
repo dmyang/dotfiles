@@ -17,7 +17,7 @@ cd "$HOME"
 for config in $CONFIGS
 do
     new_config="$HOME/.$(basename $config)"
-    [ -L "$new_config" ] && unlink "$new_config"
+    [ -L "$new_config" ] && rm "$new_config"
     [ -d "$new_config" ] && rm -rI "$new_config"
     ln -is "$config" $new_config
 done
