@@ -16,6 +16,7 @@ alias vi='vim'
 alias dt='ls -R | grep ":$" | sed -e "s/:$//" -e "s/[^-][^\/]*\//--/g" -e "s/^/ /" -e "s/-/|/"'
 alias sl='ls'
 alias rebase_all='for dir in ./*; do (cd $dir; git pull --rebase); done'
+alias gitvis='git log --graph --oneline --date-order --decorate --color --all'
 
 # Enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
