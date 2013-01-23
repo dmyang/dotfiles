@@ -42,9 +42,15 @@ set listchars+=extends:>          " The character to show in the last column whe
 set listchars+=precedes:<         " The character to show in the last column when wrap is
                                   " off and the line continues beyond the right of the screen
 
+" Folding
+"set foldmethod=indent   "fold based on indent
+"set foldnestmax=6       "deepest fold is 10 levels
+"set nofoldenable        "dont fold by default
+"set foldlevel=1         "this is just what i use
+
 " Window specific
-set winheight=30
-set winminheight=5
+"set winheight=30
+"set winminheight=5
 nnoremap <silent> + :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> - :exe "resize " . (winheight(0) * 2/3)<CR>
 nnoremap <C-h> <C-w>h
@@ -64,7 +70,7 @@ set nowrap
 
 " Tab settings
 set tabstop=4
-set shiftwidth=2
+set shiftwidth=4
 set softtabstop=4
 set expandtab
 
@@ -72,6 +78,7 @@ set expandtab
 set novisualbell
 
 " File based
+au BufNewFile,BufRead *.djhtml set filetype=html
 au! BufRead,BufNewFile *.json set filetype=json
 au BufNewFile,BufRead *.yaml,*.yml so ~/.vim/bundle/lang-yaml/colors/yaml.vim
 
@@ -82,6 +89,7 @@ syntax on
 " Color
 set background=dark
 colorscheme Tomorrow-Night
+"colorscheme solarized
 
 " Disable arrow keys (force good habits)
 nnoremap <up> <nop>
@@ -125,3 +133,6 @@ let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1
+
+" slime settings
+let g:slime_target = "tmux"
