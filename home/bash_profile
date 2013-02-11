@@ -17,11 +17,12 @@ alias dt='ls -R | grep ":$" | sed -e "s/:$//" -e "s/[^-][^\/]*\//--/g" -e "s/^/ 
 alias sl='ls'
 alias rebase_all='for dir in ./*; do (cd $dir; git pull --rebase); done'
 alias gitvis='git log --graph --oneline --date-order --decorate --color --all'
+alias ls="ls -GFp"
 
 # Enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
+    alias ls='ls -GFp --color=auto'
     alias grep='grep --color=auto'
 fi
 

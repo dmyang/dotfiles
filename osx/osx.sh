@@ -34,8 +34,8 @@ defaults write -g NSNavPanelExpandedStateForSaveMode -bool true
 # expand print dialogs
 defaults write -g PMPrintingExpandedStateForPrint -bool true
 
-# disable 3D dock
-defaults write com.apple.dock no-glass -boolean YES
+# enable 3D dock
+defaults write com.apple.dock no-glass -bool false
 
 # disable autocorrect
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false

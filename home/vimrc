@@ -20,7 +20,7 @@ let mapleader = ","
 " General
 set fillchars=""	" Remove characters in window splits
 set ls=2		" Status bar with file path and name
-"set number		" Enable line numbers
+set number		" Enable line numbers
 set ruler		" Show line and column number
 set scrolloff=3		" 3 lines of context
 set showmode		" Persistently show the mode
@@ -79,7 +79,8 @@ set novisualbell
 
 " File based
 au BufNewFile,BufRead *.djhtml set filetype=html
-au! BufRead,BufNewFile *.json set filetype=json
+au BufNewFile,BufRead *.json set filetype=json
+au BufNewFile,BufRead *.go set filetype=go
 au BufNewFile,BufRead *.yaml,*.yml so ~/.vim/bundle/lang-yaml/colors/yaml.vim
 
 filetype indent on
@@ -136,3 +137,6 @@ let g:miniBufExplModSelTarget = 1
 
 " slime settings
 let g:slime_target = "tmux"
+
+" Powerline settings
+"let g:Powerline_colorscheme='solarized'
