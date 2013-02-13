@@ -1,6 +1,3 @@
-# disable 3D dock
-defaults write com.apple.dock no-glass -bool true
-
 # disable Time Machine
 sudo tmutil disablelocal
 
@@ -39,3 +36,16 @@ defaults write com.apple.dock no-glass -bool false
 
 # disable autocorrect
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+
+# disable window animation
+defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool NO
+
+# instant expose
+defaults write com.apple.dock expose-animation-duration -int 0
+defaults write com.apple.dock springboard-show-duration -int 0
+defaults write com.apple.dock springboard-hide-duration -int 0
+
+# suck effect
+defaults write com.apple.dock mineffect -string suck
+
+killall Dock
