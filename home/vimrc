@@ -35,7 +35,7 @@ set backspace=indent,eol,start
 " Show hidden characters
 set list
 set listchars=""                  " Reset the listchars
-set listchars=tab:\ \             " a tab should display as "  ", trailing whitespace as "."
+set listchars=tab:..              " a tab should display as "  ", trailing whitespace as "."
 set listchars+=trail:.            " show trailing spaces as dots
 set listchars+=extends:>          " The character to show in the last column when wrap is
                                   " off and the line continues beyond the right of the screen
@@ -57,6 +57,8 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+nnoremap <F3> :set hlsearch!<CR>
 
 " Searching
 set hlsearch
@@ -105,6 +107,9 @@ vnoremap <up> <nop>
 vnoremap <down> <nop>
 vnoremap <left> <nop>
 vnoremap <right> <nop>
+
+" Open new tab
+nnoremap <silent> <C-W>t :tabnew<CR>
 
 " Ack Settings
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
