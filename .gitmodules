@@ -35,6 +35,9 @@
 [submodule "home/vim/bundle/plugin-endwise"]
 	path = home/vim/bundle/plugin-endwise
 	url = https://github.com/tpope/vim-endwise.git
+[submodule "home/vim/bundle/plugin-gitgutter"]
+	path = home/vim/bundle/plugin-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
 [submodule "home/vim/bundle/plugin-minibufexpl"]
 	path = home/vim/bundle/plugin-minibufexpl
 	url = https://github.com/fholgado/minibufexpl.vim.git
@@ -44,6 +47,9 @@
 [submodule "home/vim/bundle/plugin-powerline"]
 	path = home/vim/bundle/plugin-powerline
 	url = https://github.com/Lokaltog/vim-powerline.git
+[submodule "home/vim/bundle/plugin-slime"]
+	path = home/vim/bundle/plugin-slime
+	url = https://github.com/jpalardy/vim-slime.git
 [submodule "home/vim/bundle/plugin-supertab"]
 	path = home/vim/bundle/plugin-supertab
 	url = https://github.com/tsaleh/vim-supertab.git
@@ -53,6 +59,3 @@
 [submodule "home/vim/bundle/plugin-tagbar"]
 	path = home/vim/bundle/plugin-tagbar
 	url = https://github.com/majutsushi/tagbar.git
-[submodule "home/vim/bundle/plugin-slime"]
-	path = home/vim/bundle/plugin-slime
-	url = https://github.com/jpalardy/vim-slime.git
