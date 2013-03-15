@@ -49,3 +49,6 @@ defaults write com.apple.dock springboard-hide-duration -int 0
 defaults write com.apple.dock mineffect -string suck
 
 killall Dock
+
+# Disable autostart of xterm in XQuartz
+defaults write org.x.X11 app_to_run /usr/bin/true
