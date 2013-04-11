@@ -4,7 +4,7 @@ set nocompatible
 " Load Pathogen
 runtime bundle/plugin-pathogen/autoload/pathogen.vim
 filetype off
-let g:pathogen_disabled = ['pathogen', 'plugin-nerdtree', 'plugin-minibufexpl']
+let g:pathogen_disabled = ['pathogen', 'plugin-autoclose', 'plugin-minibufexpl']
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
@@ -91,6 +91,7 @@ syntax on
 
 " Color
 set background=dark
+"colorscheme molokai
 colorscheme Tomorrow-Night
 "colorscheme solarized
 
@@ -115,11 +116,11 @@ nnoremap <silent> <C-W>t :tabnew<CR>
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 
 " Omni Complete
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-inoremap <C-space> <C-x><C-o>
+"autocmd FileType python set omnifunc=pythoncomplete#Complete
+"inoremap <C-space> <C-x><C-o>
 
 " Map panes
-map <leader>n :NERDTreeToggle<CR>
+map <leader>n :NERDTreeTabsToggle<CR>
 map <leader>m :TagbarToggle<CR>
 map <Leader>b :MiniBufExplorer<cr>
 
@@ -145,3 +146,6 @@ let g:slime_target = "tmux"
 
 " Powerline settings
 "let g:Powerline_colorscheme='solarized'
+
+let g:SuperTabDefaultCompletionType = "context"
+let g:jedi#popup_on_dot = 0

@@ -5,6 +5,7 @@ export HISTCONTROL=ignoredups
 export HISTIGNORE="&:ls:[bf]g:exit"
 export HISTSIZE=10000
 
+shopt -s cdspell
 shopt -s cmdhist
 shopt -s histappend
 

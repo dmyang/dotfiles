@@ -59,3 +59,18 @@
 [submodule "home/vim/bundle/plugin-tagbar"]
 	path = home/vim/bundle/plugin-tagbar
 	url = https://github.com/majutsushi/tagbar.git
+[submodule "home/vim/bundle/plugin-jedi"]
+	path = home/vim/bundle/plugin-jedi
+	url = https://github.com/davidhalter/jedi-vim.git
+[submodule "home/vim/bundle/plugin-nerdtree-tabs"]
+	path = home/vim/bundle/plugin-nerdtree-tabs
+	url = https://github.com/jistr/vim-nerdtree-tabs.git
+[submodule "home/vim/bundle/plugin-nerdcommenter"]
+	path = home/vim/bundle/plugin-nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "home/vim/bundle/color-molokai"]
+	path = home/vim/bundle/color-molokai
+	url = https://github.com/tomasr/molokai.git
+[submodule "home/vim/bundle/plugin-delimitmate"]
+	path = home/vim/bundle/plugin-delimitmate
+	url = https://github.com/Raimondi/delimitMate.git
