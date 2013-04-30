@@ -105,6 +105,9 @@ set background=dark
 "colorscheme Tomorrow-Night
 colorscheme solarized
 
+" color fix for gitgutter and solarized
+highlight clear SignColumn
+
 " Disable arrow keys (force good habits)
 nnoremap <up> <nop>
 nnoremap <down> <nop>
