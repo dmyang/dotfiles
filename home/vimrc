@@ -70,7 +70,7 @@ nnoremap <F3> :set hlsearch!<CR>
 " Searching
 set hlsearch
 set incsearch
-set ignorecase
+"set ignorecase
 set sm
 
 " Wrapping
@@ -82,6 +82,9 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
+
+set splitbelow
+set splitright
 
 " Disable bells
 set novisualbell
@@ -99,8 +102,8 @@ syntax on
 " Color
 set background=dark
 "colorscheme molokai
-colorscheme Tomorrow-Night
-"colorscheme solarized
+"colorscheme Tomorrow-Night
+colorscheme solarized
 
 " Disable arrow keys (force good habits)
 nnoremap <up> <nop>
@@ -152,7 +155,7 @@ let g:miniBufExplModSelTarget = 1
 let g:slime_target = "tmux"
 
 " Powerline settings
-"let g:Powerline_colorscheme='solarized'
+let g:Powerline_colorscheme='solarized16'
 
 let g:SuperTabDefaultCompletionType = "context"
 let g:jedi#popup_on_dot = 0

@@ -5,6 +5,9 @@ export HISTCONTROL=ignoredups
 export HISTIGNORE="&:ls:[bf]g:exit"
 export HISTSIZE=10000
 
+# Python tab completion
+export PYTHONSTARTUP="$HOME/.python_tabcomplete.py"
+
 shopt -s cdspell
 shopt -s cmdhist
 shopt -s histappend
