@@ -19,9 +19,9 @@ complete -cf sudo
 alias vi='vim'
 alias dt='ls -R | grep ":$" | sed -e "s/:$//" -e "s/[^-][^\/]*\//--/g" -e "s/^/ /" -e "s/-/|/"'
 alias sl='ls'
-alias rebase_all='for dir in ./*; do (cd $dir; git pull --rebase); done'
 alias gitvis='git log --graph --oneline --date-order --decorate --color --all'
 alias ls="ls -GFp"
+alias sshfix="ssh-keygen -f '/home/$USER/.ssh/known_hosts' -R"
 
 # Enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -57,5 +57,13 @@ purple='\e[0;35m' # Purple
 cyan='\e[0;36m' # Cyan
 white='\e[0;37m' # White
 PS1="\[${green}\]\u\[${white}\]@\[${blue}\]\h \[${yellow}\]\w\[${orange}\] \$(git_branch)\n\[${green}\]$ \[${color_off}\]"
+
+# RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# virtualenv
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Development
+source /usr/local/bin/virtualenvwrapper.sh
 
 source ~/.workrc

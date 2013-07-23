@@ -74,3 +74,9 @@
 [submodule "home/vim/bundle/plugin-delimitmate"]
 	path = home/vim/bundle/plugin-delimitmate
 	url = https://github.com/Raimondi/delimitMate.git
+[submodule "home/vim/bundle/plugin-airline"]
+	path = home/vim/bundle/plugin-airline
+	url = https://github.com/bling/vim-airline
+[submodule "home/vim/bundle/plugin-vimwiki"]
+	path = home/vim/bundle/plugin-vimwiki
+	url = git://github.com/vim-scripts/vimwiki.git

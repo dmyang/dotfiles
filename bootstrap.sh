@@ -21,3 +21,18 @@ do
     [ -d "$new_config" ] && rm -rI "$new_config"
     ln -is "$config" $new_config
 done
+
+echo
+echo "
+    Post-install steps:
+
+    Install ctags for your distro. (via apt-get or homebrew)
+
+        apt-get install ctags
+
+    Initialize the jedi submodule.
+
+        cd ~/.vim/bundle/plugins-jedi
+        git submodule update --init
+
+""
