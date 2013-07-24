@@ -5,7 +5,7 @@ set nocompatible
 runtime bundle/plugin-pathogen/autoload/pathogen.vim
 filetype off
 let g:pathogen_disabled = ['pathogen', 'plugin-autoclose', 'plugin-minibufexpl', 'plugin-powerline']
-call pathogen#runtime_append_all_bundles()
+call pathogen#incubate()
 call pathogen#helptags()
 
 " Open NERDTree when vim starts if no file is specified
@@ -13,7 +13,7 @@ call pathogen#helptags()
 
 " Open NERDTree on right
 "let g:NERDTreeWinPos = "right"
-let NERDTreeIgnore = ['\.pyc$']
+let NERDTreeIgnore = ['\.pyc$', '\.DS_Store$']
 
 " Change leader key
 let mapleader = ","
