@@ -102,8 +102,8 @@ syntax on
 " Color
 set background=dark
 "colorscheme molokai
-colorscheme Tomorrow-Night
-"colorscheme solarized
+"colorscheme Tomorrow-Night
+colorscheme solarized
 
 " color fix for gitgutter and solarized
 highlight clear SignColumn
@@ -180,4 +180,4 @@ set noshowmode
 
 let g:airline_enable_fugitive=1
 let g:airline_enable_syntastic=1
-let g:airline_theme='tomorrow'
+let g:airline_theme='solarized'
