@@ -3,7 +3,7 @@
 export EDITOR='vim -f'
 export HISTCONTROL=ignoredups
 export HISTIGNORE="&:ls:[bf]g:exit"
-export HISTSIZE=10000
+export HISTSIZE=100000
 
 # Python tab completion
 export PYTHONSTARTUP="$HOME/.python_tabcomplete.py"
