@@ -65,7 +65,7 @@ blue='\e[0;34m' # Blue
 purple='\e[0;35m' # Purple
 cyan='\e[0;36m' # Cyan
 white='\e[0;37m' # White
-PS1="\[${green}\]\u\[${white}\]@\[${blue}\]\h \[${yellow}\]\w\[${orange}\] \$(git_branch) \n\[${green}\]$ \[${color_off}\]"
+PS1="\[${green}\]\u\[${black}\]@\[${blue}\]\h \[${yellow}\]\w\[${orange}\] \$(git_branch) \n\[${green}\]$ \[${color_off}\]"
 
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
@@ -73,6 +73,5 @@ PS1="\[${green}\]\u\[${white}\]@\[${blue}\]\h \[${yellow}\]\w\[${orange}\] \$(gi
 # virtualenv
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Development
-source /usr/local/bin/virtualenvwrapper.sh
 
 source ~/.workrc

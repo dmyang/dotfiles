@@ -93,7 +93,7 @@ filetype plugin on
 syntax on
 
 " Color
-set background=dark
+set background=light
 "colorscheme molokai
 "colorscheme Tomorrow-Night
 colorscheme solarized
