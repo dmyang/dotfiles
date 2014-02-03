@@ -1,105 +1,87 @@
-" Forget vi compatibility
-set nocompatible
+""
+"" Settings reference: https://github.com/carlhuda/janus
+""
 
-" Load Pathogen
+""
+"" Basic setup
+""
+
+set nocompatible    " Use vim, no vi defaults
+
+set cursorline      " Show cursor line
+set number          " Show line numbers
+set ruler           " Show line and column number
+set wildmenu        " Enhanced command-line completion
+
+set encoding=utf-8  " Set default encoding to UTF-8
+
+set fillchars=""    " Remove characters in window splits
+set laststatus=2    " Always show statusline
+set noshowmode      " Hide mode from statusline
+set novisualbell    " Disable visual bell
+set scrolloff=5     " Number of lines of context when scrolling
+set showmatch       " Show matching brackets
+set splitbelow      " Horizontal split below
+set splitright      " Vertical split to the right
+
+""
+"" Pathogen
+""
+
 runtime bundle/plugin-pathogen/autoload/pathogen.vim
 filetype off
 let g:pathogen_disabled = ['pathogen']
 call pathogen#incubate()
 call pathogen#helptags()
 
-" Change leader key
-let mapleader = ","
+""
+"" Whitespace
+""
 
-set t_Co=256
+set nowrap                      " Don't wrap lines visually
+set textwidth=79                " Wrap lines physically at 79
 
-" General
-set fillchars=""    " Remove characters in window splits
-set ls=2            " Status bar with file path and name
-"set number         " Enable line numbers
-set ruler           " Show line and column number
-set scrolloff=3     " 3 lines of context
-set showmode        " Persistently show the mode
-set wildmenu        " dmenu style menu of commands
-set cursorline
-set mouse=a
-set ttymouse=xterm
+set tabstop=2                   " Tab is two spaces
+set shiftwidth=2                " Autoindent is two spaces
+set expandtab                   " Use spaces, not tabs
 
-" Allow backspace to remove these characters
-set backspace=indent,eol,start
+set backspace=indent,eol,start  " Allow backspace to remove these characters
 
-" Show hidden characters
-set list
+set list                      " Show invisible characters
 set listchars=""              " Reset the listchars
-set listchars=tab:..          " a tab should display as "  ", trailing whitespace as "."
-set listchars+=trail:.        " show trailing spaces as dots
+set listchars=tab:\ \         " A tab should display as "  ", trailing whitespace as "."
+set listchars+=trail:.        " Show trailing spaces as dots
 set listchars+=extends:>      " The character to show in the last column when wrap is
                               " off and the line continues beyond the right of the screen
 set listchars+=precedes:<     " The character to show in the last column when wrap is
-                              " off and the line continues beyond the right of the screen
+                              " off and the line continues beyond the left of the screen
 
-" Folding
-"set foldmethod=indent   "fold based on indent
-"set foldnestmax=2       "deepest fold is 2 levels
-"set nofoldenable        "dont fold by default
-"set foldlevel=1         "this is just what i use
+""
+"" Keyboard mappings
+""
 
-" Remap space to open and close folds
-nnoremap <space> za
-vnoremap <space> zf
+" Map leader key
+let mapleader = ","
 
-" Window specific
-"set winheight=30
-"set winminheight=5
+" Switch buffers
+map <Tab> :bnext<CR>
+map <S-Tab> :bprevious<CR>
+
+" Resize windows
 nnoremap <silent> + :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> - :exe "resize " . (winheight(0) * 2/3)<CR>
+
+" Window movement
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" Clear highlighting
 nnoremap <F3> :set hlsearch!<CR>
 
-" Searching
-set hlsearch
-set incsearch
-"set ignorecase
-set sm
-
-" Wrapping
-set textwidth=79
-set nowrap
-
-" Tab settings
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
-
-set splitbelow
-set splitright
-
-" Disable bells
-set novisualbell
-
-" File based
-au BufNewFile,BufRead *.djhtml set filetype=html
-au BufNewFile,BufRead *.json set filetype=json
-au BufNewFile,BufRead *.go set filetype=go
-au BufNewFile,BufRead *.yaml,*.yml so ~/.vim/bundle/lang-yaml/colors/yaml.vim
-
-filetype indent on
-filetype plugin on
-syntax on
-
-" Color
-set background=light
-"colorscheme molokai
-"colorscheme Tomorrow-Night
-colorscheme solarized
-
-" color fix for gitgutter and solarized
-highlight clear SignColumn
+" Open new tab
+nnoremap <silent> <C-W>t :tabnew<CR>
 
 " Disable arrow keys (force good habits)
 nnoremap <up> <nop>
@@ -115,34 +97,47 @@ vnoremap <down> <nop>
 vnoremap <left> <nop>
 vnoremap <right> <nop>
 
-" Open new tab
-nnoremap <silent> <C-W>t :tabnew<CR>
+" Map plugin panes
+map <Leader>m :TagbarToggle<CR>
+map <Leader>t <plug>NERDTreeTabsToggle<CR>
 
-" Ack Settings
-let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+""
+"" Searching
+""
 
-" Omni Complete
-"autocmd FileType python set omnifunc=pythoncomplete#Complete
-"inoremap <C-space> <C-x><C-o>
+set hlsearch    " Highlight matches
+set incsearch   " Incremental searching
+set ignorecase  " Ignore case when searching
+set smartcase   " Don't ignore case if contains at least one capital letter
 
-" Map panes
-map <leader>m :TagbarToggle<CR>
+""
+"" File-specific
+""
 
-" Syntastic config
-let g:syntastic_mode_map = { 'mode': 'passive',
-                           \ 'active_filetypes': [],
-                           \ 'passive_filetypes': [] }
-let g:syntastic_auto_loc_list=1
+filetype indent plugin on   " Enable filetype plugins
 
-" <Ctrl-l> redraws the screen and removes any search highlighting.
-"nnoremap <silent> <C-l> :nohl<CR><C-l>
+au BufNewFile,BufRead *.djhtml set filetype=html
+au BufNewFile,BufRead *.json set filetype=javascript
+au BufNewFile,BufRead *.yaml,*.yml so ~/.vim/bundle/lang-yaml/colors/yaml.vim
 
-" Color column 80
-set cc=80
+au FileType make setlocal noexpandtab
+au FileType python setlocal softtabstop=4 tabstop=4 shiftwidth=4
 
-let g:SuperTabDefaultCompletionType = "context"
-let g:jedi#popup_on_dot = 0
-set showtabline=2
+""
+"" Color & syntax
+""
+
+syntax enable               " Enable syntax highlighting
+set background=light        " Set background color
+colorscheme solarized       " Set colorscheme
+
+set cc=80                   " Color specific column
+set t_Co=256                " Enable 256 colors support
+highlight clear SignColumn  " Color fix for gitgutter and solarized
+
+""
+"" Miscellaneous
+""
 
 " Fix for lag when exiting insert mode
 if ! has('gui_running')
@@ -154,10 +149,29 @@ if ! has('gui_running')
     augroup END
 endif
 
-set laststatus=2
-set noshowmode
+""
+"" Plugin-specific
+""
 
-" airline settings
+" Syntastic settings
+let g:syntastic_auto_loc_list=1   " Automatically open error list
+let g:syntastic_mode_map = { 'mode': 'passive',
+                           \ 'active_filetypes': [],
+                           \ 'passive_filetypes': [] }
+let g:syntastic_python_checkers=['pylint']
+
+" SuperTab: determine which completion mode to use
+let g:SuperTabDefaultCompletionType = "context"
+
+" Airline settings
 let g:airline_enable_fugitive=1
 let g:airline_enable_syntastic=1
+let g:airline_powerline_fonts = 1
 let g:airline_theme='solarized'
+let g:airline#extensions#tabline#enabled = 1
+
+" Jedi settings
+let g:jedi#popup_on_dot = 0
+let g:jedi#popup_select_first = 0
+let g:jedi#show_call_signatures = 0
+let g:jedi#use_splits_not_buffers = "left"

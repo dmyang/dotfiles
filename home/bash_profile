@@ -22,6 +22,7 @@ alias sl='ls'
 alias gitvis='git log --graph --oneline --date-order --decorate --color --all'
 alias ls="ls -GFp"
 alias sshfix="ssh-keygen -f '/home/$USER/.ssh/known_hosts' -R"
+alias grepc='LANG=C grep'
 
 # Enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -73,5 +74,6 @@ PS1="\[${green}\]\u\[${black}\]@\[${blue}\]\h \[${yellow}\]\w\[${orange}\] \$(gi
 # virtualenv
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Development
+[ -e /usr/local/bin/virtualenvwrapper.sh ] && source /usr/local/bin/virtualenvwrapper.sh
 
 source ~/.workrc

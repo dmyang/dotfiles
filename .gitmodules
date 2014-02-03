@@ -1,3 +1,8 @@
+# Root
+[submodule "fonts/powerline"]
+	path = fonts/powerline
+	url = https://github.com/Lokaltog/powerline-fonts.git
+
 # Pathogen
 [submodule "home/vim/bundle/plugin-pathogen"]
 	path = home/vim/bundle/plugin-pathogen
@@ -15,6 +20,9 @@
 [submodule "home/vim/bundle/lang-git"]
 	path = home/vim/bundle/lang-git
 	url = https://github.com/tpope/vim-git
+[submodule "home/vim/bundle/lang-javascript"]
+	path = home/vim/bundle/lang-javascript
+	url = https://github.com/pangloss/vim-javascript.git
 [submodule "home/vim/bundle/lang-json"]
 	path = home/vim/bundle/lang-json
 	url = https://github.com/vim-scripts/JSON.vim.git
@@ -23,15 +31,33 @@
 	url = https://github.com/vim-scripts/yaml.vim.git
 
 # Plugins
+[submodule "home/vim/bundle/plugin-airline"]
+	path = home/vim/bundle/plugin-airline
+	url = https://github.com/bling/vim-airline
 [submodule "home/vim/bundle/plugin-ctrlp"]
 	path = home/vim/bundle/plugin-ctrlp
 	url = https://github.com/kien/ctrlp.vim.git
+[submodule "home/vim/bundle/plugin-delimitmate"]
+	path = home/vim/bundle/plugin-delimitmate
+	url = https://github.com/Raimondi/delimitMate.git
 [submodule "home/vim/bundle/plugin-endwise"]
 	path = home/vim/bundle/plugin-endwise
 	url = https://github.com/tpope/vim-endwise.git
+[submodule "home/vim/bundle/plugin-fugitive"]
+	path = home/vim/bundle/plugin-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
 [submodule "home/vim/bundle/plugin-gitgutter"]
 	path = home/vim/bundle/plugin-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "home/vim/bundle/plugin-nerdtree"]
+	path = home/vim/bundle/plugin-nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "home/vim/bundle/plugin-nerdtree-tabs"]
+	path = home/vim/bundle/plugin-nerdtree-tabs
+	url = https://github.com/jistr/vim-nerdtree-tabs.git
+[submodule "home/vim/bundle/plugin-jedi"]
+	path = home/vim/bundle/plugin-jedi
+	url = https://github.com/davidhalter/jedi-vim.git
 [submodule "home/vim/bundle/plugin-supertab"]
 	path = home/vim/bundle/plugin-supertab
 	url = https://github.com/tsaleh/vim-supertab.git
@@ -41,12 +67,3 @@
 [submodule "home/vim/bundle/plugin-tagbar"]
 	path = home/vim/bundle/plugin-tagbar
 	url = https://github.com/majutsushi/tagbar.git
-[submodule "home/vim/bundle/plugin-jedi"]
-	path = home/vim/bundle/plugin-jedi
-	url = https://github.com/davidhalter/jedi-vim.git
-[submodule "home/vim/bundle/plugin-delimitmate"]
-	path = home/vim/bundle/plugin-delimitmate
-	url = https://github.com/Raimondi/delimitMate.git
-[submodule "home/vim/bundle/plugin-airline"]
-	path = home/vim/bundle/plugin-airline
-	url = https://github.com/bling/vim-airline
