@@ -30,7 +30,7 @@ set splitright      " Vertical split to the right
 
 runtime bundle/plugin-pathogen/autoload/pathogen.vim
 filetype off
-let g:pathogen_disabled = ['pathogen']
+let g:pathogen_disabled = ['pathogen', 'plugin-jedi']
 call pathogen#incubate()
 call pathogen#helptags()
 
@@ -128,7 +128,7 @@ au FileType python setlocal softtabstop=4 tabstop=4 shiftwidth=4
 ""
 
 syntax enable               " Enable syntax highlighting
-set background=light        " Set background color
+set background=dark         " Set background color
 colorscheme solarized       " Set colorscheme
 
 set cc=80                   " Color specific column
