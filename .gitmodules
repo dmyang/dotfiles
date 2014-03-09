@@ -67,3 +67,6 @@
 [submodule "home/vim/bundle/plugin-tagbar"]
 	path = home/vim/bundle/plugin-tagbar
 	url = https://github.com/majutsushi/tagbar.git
+[submodule "home/vim/bundle/lang-jinja"]
+	path = home/vim/bundle/lang-jinja
+	url = https://github.com/Glench/Vim-Jinja2-Syntax
