@@ -8,7 +8,7 @@
 
 set nocompatible    " Use vim, no vi defaults
 
-set cursorline      " Show cursor line
+"set cursorline      " Show cursor line
 set number          " Show line numbers
 set ruler           " Show line and column number
 set wildmenu        " Enhanced command-line completion
@@ -31,7 +31,7 @@ set splitright      " Vertical split to the right
 runtime bundle/plugin-pathogen/autoload/pathogen.vim
 filetype off
 let g:pathogen_disabled = ['pathogen', 'plugin-jedi']
-call pathogen#incubate()
+call pathogen#infect('bundle/{}')
 call pathogen#helptags()
 
 ""
@@ -148,6 +148,16 @@ if ! has('gui_running')
         au InsertLeave * set timeoutlen=1000
     augroup END
 endif
+
+""
+"" Speed up vim!
+""
+set nocursorcolumn        " Disable screen column highlight of cursor
+set nocursorline          " Disable screen row highlight of cursor
+set synmaxcol=200         " Max column to search for syntax items
+set ttyfast               " Indicates a fast terminal connection
+set ttyscroll=3           " Max number of lines to scroll the screen
+set lazyredraw            " Lazy screen redraw
 
 ""
 "" Plugin-specific

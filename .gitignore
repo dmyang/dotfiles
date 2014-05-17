@@ -1,3 +1,4 @@
+.DS_Store
 excluded/
 home/vim/bundle/lang-git
 home/vim/.netrwhist
