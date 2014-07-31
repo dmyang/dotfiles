@@ -1,0 +1,16 @@
+[user]
+    name = David Yang
+[core]
+    editor = vim
+    excludesfile = ./.gitignore_global
+[merge]
+    tool = vimdiff
+[color]
+    branch = auto
+    diff = auto
+    interactive = auto
+    status = auto
+[difftool]
+    prompt = false
+[alias]
+    lg = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
