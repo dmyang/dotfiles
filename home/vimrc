@@ -8,7 +8,7 @@
 
 set nocompatible    " Use vim, no vi defaults
 
-"set cursorline      " Show cursor line
+set cursorline      " Show cursor line
 set number          " Show line numbers
 set ruler           " Show line and column number
 set wildmenu        " Enhanced command-line completion
@@ -152,33 +152,37 @@ endif
 ""
 "" Speed up vim!
 ""
-set nocursorcolumn        " Disable screen column highlight of cursor
-set nocursorline          " Disable screen row highlight of cursor
-set synmaxcol=200         " Max column to search for syntax items
-set ttyfast               " Indicates a fast terminal connection
-set ttyscroll=3           " Max number of lines to scroll the screen
-set lazyredraw            " Lazy screen redraw
+"set nocursorcolumn        " Disable screen column highlight of cursor
+"set nocursorline          " Disable screen row highlight of cursor
+"set synmaxcol=200         " Max column to search for syntax items
+"set ttyfast               " Indicates a fast terminal connection
+"set ttyscroll=3           " Max number of lines to scroll the screen
+"set lazyredraw            " Lazy screen redraw
 
 ""
 "" Plugin-specific
 ""
 
 " Syntastic settings
-let g:syntastic_auto_loc_list=1   " Automatically open error list
+let g:syntastic_auto_loc_list = 1   " Automatically open error list
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': [],
                            \ 'passive_filetypes': ['python'] }
-let g:syntastic_python_checkers=['pylint']
+let g:syntastic_python_checkers = ['pylint']
 
 " SuperTab: determine which completion mode to use
 let g:SuperTabDefaultCompletionType = "context"
 
 " Airline settings
-let g:airline_enable_fugitive=1
-let g:airline_enable_syntastic=1
-let g:airline_powerline_fonts = 1
-let g:airline_theme='solarized'
+let g:airline_enable_fugitive = 1
+let g:airline_enable_syntastic = 1
+let g:airline_powerline_fonts = 0
+let g:airline_theme = 'solarized'
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#right_sep = ''
 
 " Jedi settings
 let g:jedi#popup_on_dot = 0

@@ -1,8 +1,3 @@
-# Root
-[submodule "fonts/powerline"]
-	path = fonts/powerline
-	url = https://github.com/Lokaltog/powerline-fonts.git
-
 # Pathogen
 [submodule "home/vim/bundle/plugin-pathogen"]
 	path = home/vim/bundle/plugin-pathogen
