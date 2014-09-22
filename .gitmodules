@@ -68,3 +68,6 @@
 [submodule "home/vim/bundle/plugin-scala"]
 	path = home/vim/bundle/plugin-scala
 	url = https://github.com/derekwyatt/vim-scala.git
+[submodule "home/vim/bundle/lang-thrift"]
+	path = home/vim/bundle/lang-thrift
+	url = https://github.com/solarnz/thrift.vim.git

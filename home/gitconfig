@@ -2,7 +2,7 @@
     name = David Yang
 [core]
     editor = vim
-    excludesfile = ./.gitignore_global
+    excludesfile = ~/.gitignore_global
 [merge]
     tool = vimdiff
 [color]
@@ -14,3 +14,7 @@
     prompt = false
 [alias]
     lg = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+    ctags = !.git/hooks/ctags
+	co = checkout
+[init]
+    templatedir = ~/.git_template

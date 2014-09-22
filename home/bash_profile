@@ -80,4 +80,9 @@ if [ -e /usr/local/bin/python ]; then
 fi
 [ -e /usr/local/bin/virtualenvwrapper.sh ] && source /usr/local/bin/virtualenvwrapper.sh
 
-source ~/.workrc
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
+
+# Work configs
+[ -e ~/.workrc ] && source ~/.workrc

@@ -8,7 +8,8 @@
 
 set nocompatible    " Use vim, no vi defaults
 
-set cursorline      " Show cursor line
+set cursorline      " Show cursor line - only use with lazy redraw as it will
+                    " lag with long lines
 set number          " Show line numbers
 set ruler           " Show line and column number
 set wildmenu        " Enhanced command-line completion
@@ -119,6 +120,7 @@ filetype indent plugin on   " Enable filetype plugins
 au BufNewFile,BufRead *.djhtml set filetype=html
 au BufNewFile,BufRead *.json set filetype=javascript
 au BufNewFile,BufRead *.yaml,*.yml so ~/.vim/bundle/lang-yaml/colors/yaml.vim
+au BufNewFile,BufReadPost *.md set filetype=markdown
 
 au FileType make setlocal noexpandtab
 au FileType python setlocal softtabstop=4 tabstop=4 shiftwidth=4
@@ -128,7 +130,7 @@ au FileType python setlocal softtabstop=4 tabstop=4 shiftwidth=4
 ""
 
 syntax enable               " Enable syntax highlighting
-set background=dark         " Set background color
+set background=light        " Set background color
 colorscheme solarized       " Set colorscheme
 
 set cc=80                   " Color specific column
@@ -152,8 +154,8 @@ endif
 ""
 "" Speed up vim!
 ""
-"set nocursorcolumn        " Disable screen column highlight of cursor
-"set nocursorline          " Disable screen row highlight of cursor
+set nocursorcolumn        " Disable screen column highlight of cursor
+set nocursorline          " Disable screen row highlight of cursor
 "set synmaxcol=200         " Max column to search for syntax items
 "set ttyfast               " Indicates a fast terminal connection
 "set ttyscroll=3           " Max number of lines to scroll the screen
@@ -167,7 +169,7 @@ endif
 let g:syntastic_auto_loc_list = 1   " Automatically open error list
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': [],
-                           \ 'passive_filetypes': ['python'] }
+                           \ 'passive_filetypes': ['python', 'scala'] }
 let g:syntastic_python_checkers = ['pylint']
 
 " SuperTab: determine which completion mode to use
@@ -189,3 +191,27 @@ let g:jedi#popup_on_dot = 0
 let g:jedi#popup_select_first = 0
 let g:jedi#show_call_signatures = 0
 let g:jedi#use_splits_not_buffers = "left"
+
+" Wildmenu completion
+set wildignore+=*.class "java/scala class files"
+set wildignore+=*/target/* "sbt target directory"
+
+" Tagbar settings
+let g:tagbar_type_scala = {
+    \ 'ctagstype' : 'Scala',
+    \ 'kinds'     : [
+        \ 'p:packages:1',
+        \ 'V:values',
+        \ 'v:variables',
+        \ 'T:types',
+        \ 't:traits',
+        \ 'o:objects',
+        \ 'a:aclasses',
+        \ 'c:classes',
+        \ 'r:cclasses',
+        \ 'm:methods'
+    \ ]
+\ }
+
+" Move up the file hierarchy until file with tag is found
+set tags=tags;/
