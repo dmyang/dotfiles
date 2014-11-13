@@ -7,7 +7,7 @@ PWD_ABS_PATH=$(pwd -P)
 CONFIGS=$(find $PWD_ABS_PATH/home -maxdepth 1 -not \( -name "$PWD_NAME" -o \
                                                       -name 'bootstrap.sh' -o \
                                                       -name ".git" -o \
-                                                      -name ".gitmodules" \
+                                                      -name ".gitmodules" -o \
                                                       -name ".DS_Store" \))
 JEDI_DIR="$PWD_ABS_PATH/home/vim/bundle/plugin-jedi"
 
