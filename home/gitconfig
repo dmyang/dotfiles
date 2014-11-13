@@ -18,4 +18,4 @@
   root = rev-parse --show-toplevel
 	co = checkout
 [init]
-  templatedir = ~/.githooks
+  templatedir = ~/.git_template
