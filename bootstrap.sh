@@ -2,7 +2,7 @@
 
 set -x
 
-PARENT_DIR=$(dirname $(readlink -f "$0"))
+PARENT_DIR=$(cd "$(dirname "$0")"; pwd)
 PARENT_DIRNAME=$(basename "$PARENT_DIR")
 CONFIGS=$(find $PARENT_DIR/home -maxdepth 1 -not \( -name "$PARENT_DIRNAME" -o \
                                                      -name 'bootstrap.sh' -o \
