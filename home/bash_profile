@@ -5,9 +5,6 @@ export HISTCONTROL=ignoredups
 export HISTIGNORE="&:ls:[bf]g:exit"
 export HISTSIZE=100000
 
-# Python tab completion
-export PYTHONSTARTUP="$HOME/.python_tabcomplete.py"
-
 shopt -s cdspell
 shopt -s cmdhist
 shopt -s histappend
@@ -17,43 +14,26 @@ complete -cf sudo
 
 # Aliases
 alias vi='vim'
-alias dt='ls -R | grep ":$" | sed -e "s/:$//" -e "s/[^-][^\/]*\//--/g" -e "s/^/ /" -e "s/-/|/"'
-alias sl='ls'
-alias gitvis='git log --graph --oneline --date-order --decorate --color --all'
 alias ls="ls -GFp"
-alias sshfix="ssh-keygen -f '/home/$USER/.ssh/known_hosts' -R"
-alias grepc='LANG=C grep'
+alias sl='ls'
+
+# inputrc
+bind 'set completion-ignore-case on'
+bind 'set show-all-if-ambiguous on'
+bind 'set show-all-if-unmodified on'
 
 # Enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls -GFp --color=auto'
-    alias grep='grep --color=auto'
+  test -r ~/.config/dircolors && eval "$(dircolors -b ~/.config/dircolors)" || eval "$(dircolors -b)"
+  alias ls='ls -GFp --color=auto'
+  alias grep='grep --color=auto'
 fi
 
 # Print current banch
 function git_branch {
-    ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-    echo ${ref#refs/heads/}
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+  echo ${ref#refs/heads/}
 }
-
-function rvm_version {
-  local gemset=$(echo $GEM_HOME | awk -F'@' '{print $2}')
-  [ "$gemset" != "" ] && gemset="@$gemset"
-  local version=$(echo $MY_RUBY_HOME | awk -F'-' '{print $2}')
-  [ "$version" != "" ] && version="$version"
-  local full="$version$gemset"
-  [ "$full" != "" ] && echo "ruby:$full"
-}
-
-# Display unstaged (*) and staged(+) changes
-export GIT_PS1_SHOWDIRTYSTATE="1"
-# Display whether there are stashed ($) changes
-export GIT_PS1_SHOWSTASHSTATE="1"
-# Display if there are untracked (%) files
-export GIT_PS1_SHOWUNTRACKEDFILES="1"
-# Display if we're ahead (>) or behind (<) or diverged (<>) relative to upstream
-export GIT_PS1_SHOWUPSTREAM="auto"
 
 # Colors
 color_off='\e[0m' # Text Reset
@@ -80,6 +60,7 @@ if [ -e /usr/local/bin/python ]; then
 fi
 [ -e /usr/local/bin/virtualenvwrapper.sh ] && source /usr/local/bin/virtualenvwrapper.sh
 
+# Git branch completion
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi

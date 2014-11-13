@@ -8,46 +8,32 @@ CONFIGS=$(find $PWD_ABS_PATH/home -maxdepth 1 -not \( -name "$PWD_NAME" -o \
                                                       -name 'bootstrap.sh' -o \
                                                       -name ".git" -o \
                                                       -name ".gitmodules" \
-                                                      -name ".DS_Store"\))
+                                                      -name ".DS_Store" \))
 JEDI_DIR="$PWD_ABS_PATH/home/vim/bundle/plugin-jedi"
 
 function init() {
-    # Initialize all submodules
-    (cd "$PWD_ABS_PATH" && git submodule update --init)
+    update
 
-    # Initialize Jedi
-    if [ -e "$JEDI_DIR" ]; then
-        (cd "$JEDI_DIR" && git submodule update --init)
-    fi
-
-    # Symlink all files
+    # Remove existing configs and symlink new files
     cd "$HOME"
     for config in $CONFIGS
     do
         new_config="$HOME/.$(basename $config)"
         [ -L "$new_config" ] && rm "$new_config"
-        [ -d "$new_config" ] && rm -rI "$new_config"
+        [ -d "$new_config" ] && rm -r "$new_config"
         ln -is "$config" $new_config
     done
 
-    echo
-    echo "
-        Post-install steps:
-
-        Install ctags for your distro. (via apt-get or homebrew)
-
-            apt-get install ctags
-
-    "
+    echo "Setup complete."
 }
 
 function update() {
     # Update all submodules
-    (cd "$PWD_ABS_PATH" && git submodule foreach git pull origin master)
+    (cd "$PWD_ABS_PATH" && git submodule update --init)
 
     # Update Jedi
     if [ -e "$JEDI_DIR" ]; then
-        (cd "$JEDI_DIR" && git submodule foreach git pull origin master)
+        (cd "$JEDI_DIR" && git submodule update --init)
     fi
 }
 
