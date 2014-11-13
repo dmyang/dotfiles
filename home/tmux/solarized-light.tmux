@@ -1,19 +1,19 @@
 #### COLOUR (Solarized light)
 
 # default statusbar colors
-set-option -g status-bg white #base2
+set-option -g status-bg default #base2
 set-option -g status-fg yellow #yellow
-set-option -g status-attr default
+set-option -g status-attr bright
 
 # default window title colors
 set-window-option -g window-status-fg brightyellow #base00
 set-window-option -g window-status-bg default
-#set-window-option -g window-status-attr dim
+set-window-option -g window-status-attr dim
 
 # active window title colors
 set-window-option -g window-status-current-fg brightred #orange
 set-window-option -g window-status-current-bg default
-#set-window-option -g window-status-current-attr bright
+set-window-option -g window-status-current-attr bright
 
 # pane border
 set-option -g pane-border-fg white #base2
