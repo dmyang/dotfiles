@@ -1,20 +1,21 @@
 [user]
-    name = David Yang
+	name = David Yang
 [core]
-    editor = vim
-    excludesfile = ~/.gitignore_global
+  editor = vim
+  excludesfile = ~/.gitignore_global
 [merge]
-    tool = vimdiff
+  tool = vimdiff
 [color]
-    branch = auto
-    diff = auto
-    interactive = auto
-    status = auto
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
 [difftool]
-    prompt = false
+  prompt = false
 [alias]
-    lg = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-    ctags = !.git/hooks/ctags
+  lg = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+  ctags = !.git/hooks/ctags
+  root = rev-parse --show-toplevel
 	co = checkout
 [init]
-    templatedir = ~/.git_template
+  templatedir = ~/.githooks
