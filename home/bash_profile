@@ -14,13 +14,13 @@ complete -cf sudo
 
 # Aliases
 alias vi='vim'
-alias ls="ls -GFp"
+alias ls="ls -al -GFp"
 alias sl='ls'
 
 # Enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
   test -r ~/.config/dircolors && eval "$(dircolors -b ~/.config/dircolors)" || eval "$(dircolors -b)"
-  alias ls='ls -GFp --color=auto'
+  alias ls='ls -al -GFp --color=auto'
   alias grep='grep --color=auto'
 fi
 
