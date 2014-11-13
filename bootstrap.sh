@@ -2,16 +2,16 @@
 
 set -x
 
-PWD_NAME=${PWD##*/}
-PWD_ABS_PATH=$(pwd -P)
-CONFIGS=$(find $PWD_ABS_PATH/home -maxdepth 1 -not \( -name "$PWD_NAME" -o \
-                                                      -name 'bootstrap.sh' -o \
-                                                      -name ".git" -o \
-                                                      -name ".gitmodules" -o \
-                                                      -name ".DS_Store" \))
-JEDI_DIR="$PWD_ABS_PATH/home/vim/bundle/plugin-jedi"
+PARENT_DIR=$(dirname $(readlink -f "$0"))
+PARENT_DIRNAME=$(basename "$PARENT_DIR")
+CONFIGS=$(find $PARENT_DIR/home -maxdepth 1 -not \( -name "$PARENT_DIRNAME" -o \
+                                                     -name 'bootstrap.sh' -o \
+                                                     -name ".git" -o \
+                                                     -name ".gitmodules" -o \
+                                                     -name ".DS_Store" \))
+JEDI_DIR="$PARENT_DIR/home/vim/bundle/plugin-jedi"
 
-function init() {
+init() {
     update
 
     # Remove existing configs and symlink new files
@@ -27,9 +27,9 @@ function init() {
     echo "Setup complete."
 }
 
-function update() {
+update() {
     # Update all submodules
-    (cd "$PWD_ABS_PATH" && git submodule update --init)
+    (cd "$PARENT_DIR" && git submodule update --init)
 
     # Update Jedi
     if [ -e "$JEDI_DIR" ]; then
@@ -37,7 +37,7 @@ function update() {
     fi
 }
 
-function usage() {
+usage() {
     echo "Usage: `basename $0` init - intializes all submodules and links files
                  `basename $0` update - updates all submodules"
     exit $E_BADARGS
