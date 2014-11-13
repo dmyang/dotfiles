@@ -124,14 +124,15 @@ au BufNewFile,BufReadPost *.md set filetype=markdown
 
 au FileType make setlocal noexpandtab
 au FileType python setlocal softtabstop=4 tabstop=4 shiftwidth=4
+au FileType scala setlocal cc=100 tw=100
 
 ""
 "" Color & syntax
 ""
 
-syntax enable               " Enable syntax highlighting
-set background=light        " Set background color
-colorscheme solarized       " Set colorscheme
+syntax enable                " Enable syntax highlighting
+set background=light         " Set background color
+colorscheme base16-solarized " Set colorscheme
 
 set cc=80                   " Color specific column
 set t_Co=256                " Enable 256 colors support
@@ -167,9 +168,9 @@ set nocursorline          " Disable screen row highlight of cursor
 
 " Syntastic settings
 let g:syntastic_auto_loc_list = 1   " Automatically open error list
-let g:syntastic_mode_map = { 'mode': 'active',
+let g:syntastic_mode_map = { 'mode': 'passive',
                            \ 'active_filetypes': [],
-                           \ 'passive_filetypes': ['python', 'scala'] }
+                           \ 'passive_filetypes': [] }
 let g:syntastic_python_checkers = ['pylint']
 
 " SuperTab: determine which completion mode to use
@@ -179,7 +180,6 @@ let g:SuperTabDefaultCompletionType = "context"
 let g:airline_enable_fugitive = 1
 let g:airline_enable_syntastic = 1
 let g:airline_powerline_fonts = 0
-let g:airline_theme = 'solarized'
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline#extensions#tabline#enabled = 1
