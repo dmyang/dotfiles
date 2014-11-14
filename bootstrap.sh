@@ -4,11 +4,12 @@ set -x
 
 PARENT_DIR=$(cd "$(dirname "$0")"; pwd)
 PARENT_DIRNAME=$(basename "$PARENT_DIR")
-CONFIGS=$(find $PARENT_DIR/home -maxdepth 1 -not \( -name "$PARENT_DIRNAME" -o \
-                                                     -name 'bootstrap.sh' -o \
-                                                     -name ".git" -o \
-                                                     -name ".gitmodules" -o \
-                                                     -name ".DS_Store" \))
+CONFIGS=$(find $PARENT_DIR/home -mindepth 1 -maxdepth 1 -not \( \
+  -name "$PARENT_DIRNAME" -o \
+  -name 'bootstrap.sh' -o \
+  -name ".git" -o \
+  -name ".gitmodules" -o \
+  -name ".DS_Store" \))
 JEDI_DIR="$PARENT_DIR/home/vim/bundle/plugin-jedi"
 
 init() {
