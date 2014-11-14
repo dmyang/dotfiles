@@ -14,13 +14,13 @@ complete -cf sudo
 
 # Aliases
 alias vi='vim'
-alias ls="ls -al -GFp"
+alias ls="ls -alh -GFp"
 alias sl='ls'
 
 # Enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
   test -r ~/.config/dircolors && eval "$(dircolors -b ~/.config/dircolors)" || eval "$(dircolors -b)"
-  alias ls='ls -al -GFp --color=auto'
+  alias ls='ls -alh -GFp --color=auto'
   alias grep='grep --color=auto'
 fi
 
@@ -43,6 +43,11 @@ cyan='\e[0;36m' # Cyan
 white='\e[0;37m' # White
 PS1="\[${green}\]\u\[${white}\]@\[${blue}\]\h \[${yellow}\]\w\[${orange}\] \$(git_branch) \n\[${green}\]$ \[${color_off}\]"
 
+# bash completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
@@ -54,11 +59,6 @@ if [ -e /usr/local/bin/python ]; then
   export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 fi
 [ -e /usr/local/bin/virtualenvwrapper.sh ] && source /usr/local/bin/virtualenvwrapper.sh
-
-# Git branch completion
-if [ -f ~/.git-completion.bash ]; then
-  . ~/.git-completion.bash
-fi
 
 # Work configs
 [ -e ~/.workrc ] && source ~/.workrc
