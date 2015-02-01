@@ -14,8 +14,9 @@ complete -cf sudo
 
 # Aliases
 alias vi='vim'
-alias ls="ls -alh -GFp"
+alias ls="ls -lh -GFp"
 alias sl='ls'
+alias diff='diff -u'
 
 # Enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
