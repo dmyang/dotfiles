@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# Run Rails tests
+raket() {
+  echo "Executing tests: $@"
+  bundle exec rake test TEST="$@"
+}

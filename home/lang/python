@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Virtualenv
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Development
+# for OSX/homebrew
+if [ -e /usr/local/bin/python ]; then
+  export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
+fi
+[ -e /usr/local/bin/virtualenvwrapper.sh ] && source /usr/local/bin/virtualenvwrapper.sh
