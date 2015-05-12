@@ -5,6 +5,6 @@
 
 # Run Rails tests
 raket() {
-  echo "Executing tests: $@"
-  bundle exec rake test TEST="$@"
+  echo "Executing tests: \'$@\'"
+  bundle exec rake test TEST='$@'
 }
