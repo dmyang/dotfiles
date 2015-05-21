@@ -35559,11 +35559,11 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>665 544 445 270 0 0 2560 1418 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>507 331 924 485 0 0 1920 1058 </string>
+	<string>507 400 924 485 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>960 12 954 1046 0 0 1920 1058 </string>
+	<string>0 32 2554 1386 0 0 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>960 12 954 1046 0 0 1920 1058 </string>
+	<string>1280 712 1274 706 0 0 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>960 18 955 1160 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
@@ -37027,6 +37027,10 @@
 	</array>
 	<key>NoSyncNeverRemindPrefsChangesCopy</key>
 	<true/>
+	<key>NoSyncTimeOfLastPromo</key>
+	<real>453231027.374852</real>
+	<key>NoSyncTimeOfLastPromoDownload</key>
+	<real>453691569.43100899</real>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>OpenArrangementAtStartup</key>
@@ -37035,6 +37039,8 @@
 	<false/>
 	<key>OpenTmuxWindowsIn</key>
 	<integer>0</integer>
+	<key>PMPrintingExpandedStateForPrint2</key>
+	<false/>
 	<key>PassOnControlClick</key>
 	<false/>
 	<key>PasteFromClipboard</key>
@@ -37091,7 +37097,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-04-28T17:09:35Z</date>
+	<date>2015-05-19T21:50:44Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
@@ -37134,7 +37140,11 @@
 	<integer>0</integer>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
+	<key>findIgnoreCase_iTerm</key>
+	<true/>
+	<key>findRegex_iTerm</key>
+	<false/>
 	<key>iTerm Version</key>
-	<string>2.0.0.20150412</string>
+	<string>2.1.1</string>
 </dict>
 </plist>
