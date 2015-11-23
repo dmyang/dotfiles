@@ -1,6 +1,6 @@
 #!/bin/bash
 
-eval "$(rbenv init -)"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # Aliases
 alias ber='bundle exec rake'
