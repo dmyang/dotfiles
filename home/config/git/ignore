@@ -9,4 +9,6 @@ Thumbs.db
 # Intellij
 .idea
 # rbenv
-tmp/vendor/bundle
+vendor
+# SBT
+target
