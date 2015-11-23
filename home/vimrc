@@ -102,6 +102,9 @@ vnoremap <right> <nop>
 map <Leader>m :TagbarToggle<CR>
 map <Leader>t <plug>NERDTreeTabsToggle<CR>
 
+" Replace currently selected text with default register without yanking it
+vnoremap <leader>p "_dP
+
 ""
 "" Searching
 ""
