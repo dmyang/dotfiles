@@ -4,6 +4,7 @@ export EDITOR='vim -f'
 export HISTCONTROL=ignoredups
 export HISTIGNORE="&:ls:[bf]g:exit"
 export HISTSIZE=100000
+export PROMPT_COMMAND='echo -ne "\033]0; ${PWD##*/}\007"'
 
 shopt -s cdspell
 shopt -s cmdhist
