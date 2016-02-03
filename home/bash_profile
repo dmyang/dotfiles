@@ -6,6 +6,8 @@ export HISTIGNORE="&:ls:[bf]g:exit"
 export HISTSIZE=100000
 export PROMPT_COMMAND='echo -ne "\033]0; ${PWD##*/}\007"'
 
+export PATH="/usr/local/sbin:$PATH"
+
 shopt -s cdspell
 shopt -s cmdhist
 shopt -s histappend
