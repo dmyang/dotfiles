@@ -53,6 +53,7 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 fi
 
 # Language configs
+[ -e ~/.lang/go ] && source ~/.lang/go
 [ -e ~/.lang/python ] && source ~/.lang/python
 [ -e ~/.lang/ruby ] && source ~/.lang/ruby
 
