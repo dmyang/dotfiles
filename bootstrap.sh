@@ -10,7 +10,6 @@ CONFIGS=$(find $PARENT_DIR/home -mindepth 1 -maxdepth 1 -not \( \
   -name ".git" -o \
   -name ".gitmodules" -o \
   -name ".DS_Store" \))
-JEDI_DIR="$PARENT_DIR/home/vim/bundle/plugin-jedi"
 
 init() {
     update
@@ -31,16 +30,16 @@ init() {
 update() {
     # Update all submodules
     (cd "$PARENT_DIR" && git submodule update --init)
+}
 
-    # Update Jedi
-    if [ -e "$JEDI_DIR" ]; then
-        (cd "$JEDI_DIR" && git submodule update --init)
-    fi
+upgrade() {
+    (cd "$PARENT_DIR" && git submodule foreach git pull origin master)
 }
 
 usage() {
     echo "Usage: `basename $0` init - intializes all submodules and links files
-                 `basename $0` update - updates all submodules"
+                 `basename $0` update - updates all submodules
+                 `basename $0` upgrade - upgrade all submodules"
     exit $E_BADARGS
 }
 
@@ -54,6 +53,9 @@ case "$1" in
         ;;
     update)
         update
+        ;;
+    upgrade)
+        upgrade
         ;;
     *)
         usage
