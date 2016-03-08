@@ -112,7 +112,6 @@ vnoremap <leader>p "_dP
 set hlsearch    " Highlight matches
 set incsearch   " Incremental searching
 set ignorecase  " Ignore case when searching
-set smartcase   " Don't ignore case if contains at least one capital letter
 
 ""
 "" File-specific
@@ -159,12 +158,15 @@ endif
 set wildignore+=*.class "java/scala class files"
 set wildignore+=*/target/* "sbt target directory"
 
+" Open quickfix window for grep commands
+autocmd QuickFixCmdPost *grep* cwindow
+
 ""
 "" Speed up vim!
 ""
 
-set nocursorcolumn        " Disable screen column highlight of cursor
-set nocursorline          " Disable screen row highlight of cursor
+"set cursorcolumn        " Disable screen column highlight of cursor
+"set cursorline          " Disable screen row highlight of cursor
 "set synmaxcol=200         " Max column to search for syntax items
 "set ttyfast               " Indicates a fast terminal connection
 "set ttyscroll=3           " Max number of lines to scroll the screen
@@ -203,4 +205,5 @@ let g:jedi#use_splits_not_buffers = "left"
 
 " CtrlP settings
 let g:ctrlp_regexp = 1
+let g:ctrlp_by_filename = 0
 let g:ctrlp_user_command = ['.git/', 'git ls-files --cached --others  --exclude-standard %s']
