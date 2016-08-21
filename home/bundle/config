@@ -1,4 +1,5 @@
 ---
-BUNDLE_PATH: vendor/bundle
-BUNDLE_BUILD__THRIFT: "--with-cppflags=-D_FORTIFY_SOURCE=0"
+BUNDLE_BUILD__THRIFT: "--with-cppflags=-Wno-error=shift-negative-value"
 BUNDLE_BUILD__EVENTMACHINE: "--with-cppflags=-I/usr/local/opt/openssl/include"
+BUNDLE_BUILD__PUMA: "--with-opt-dir=/usr/local/opt/openssl"
+BUNDLE_BUILD__LIBV8: "--with-cppflags=-Wno-error=shift-negative-value"

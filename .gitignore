@@ -1,5 +1,12 @@
 .DS_Store
-excluded/
-home/vim/bundle/lang-git
-home/vim/.netrwhist
-home/config/hub
+
+!home/vim/addons
+!home/vim/bundle
+home/vim/*
+
+!home/bundle/config
+home/bundle/*
+
+!home/config/git
+!home/config/dircolors
+home/config/*
