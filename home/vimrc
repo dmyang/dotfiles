@@ -22,6 +22,7 @@ set scrolloff=5     " Number of lines of context when scrolling
 set showmatch       " Show matching brackets
 set splitbelow      " Horizontal split below
 set splitright      " Vertical split to the right
+set synmaxcol=200   " Syntax highlighting on long lines can be really slow
 
 ""
 "" Pathogen
