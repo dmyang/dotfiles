@@ -184,3 +184,6 @@ let g:airline#extensions#tabline#right_sep = ''
 let g:ctrlp_regexp = 1
 let g:ctrlp_by_filename = 0
 let g:ctrlp_user_command = ['.git/', 'git ls-files --cached --others  --exclude-standard %s']
+
+" Polyglot
+let g:polyglot_disabled = ['markdown']
