@@ -1,0 +1,14 @@
+packages:
+  darwin:
+    brews:
+      - neovim
+      - fd
+      - fzf
+      - zoxide
+      - starship
+      - zsh-completions
+      - zsh-autosuggestions
+      - zsh-syntax-highlighting
+      - zsh-history-substring-search
+      - git
+    casks: []

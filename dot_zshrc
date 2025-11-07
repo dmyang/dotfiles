@@ -1,0 +1,79 @@
+#!/bin/zsh
+
+# environment setup
+export EDITOR='nvim -f'
+export GIT_EDITOR='nvim'
+
+# homebrew - init early so paths are available
+eval "$(/opt/homebrew/bin/brew shellenv)"
+export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_NO_INSTALL_UPGRADE=1
+
+# zsh customization
+setopt AUTO_CD                   # cd by typing directory name
+setopt CORRECT                   # correct commands
+
+# fish like history management
+export HISTFILE=~/.zsh_history
+export HISTSIZE=256000           # In memory
+export SAVEHIST=256000           # On disk
+setopt EXTENDED_HISTORY          # Write timestamps
+setopt HIST_EXPIRE_DUPS_FIRST    # Expire duplicate entries first
+setopt HIST_IGNORE_DUPS          # Don't record consecutive duplicates
+setopt HIST_IGNORE_ALL_DUPS      # Delete old duplicate entries
+setopt HIST_FIND_NO_DUPS         # Don't display duplicates when searching
+setopt HIST_IGNORE_SPACE         # Don't record entries starting with space
+setopt HIST_SAVE_NO_DUPS         # Don't write duplicates to history file
+setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks
+setopt SHARE_HISTORY             # Share history across sessions
+setopt INC_APPEND_HISTORY        # Write immediately, not on shell exit
+
+# zsh completions - initialize after FPATH modifications, before plugins
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+  autoload -Uz compinit
+  compinit
+fi
+
+# zsh plugins - syntax-highlighting must be last
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# ctrl+f to accept suggestions
+bindkey '^F' autosuggest-accept
+
+# up/down keys to search history
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
+# tab complete with sudo
+zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
+
+# aliases
+alias vi='nvim'
+alias vim='nvim'
+alias ls="ls -lh -GFp"
+alias sl='ls'
+alias grep='grep --color=auto'
+alias diff='diff -u'
+alias z='zoxide'
+
+# fzf - fuzzy finder
+export FZF_DEFAULT_COMMAND="fd --type f"
+export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS"\
+" --color=bg+:#ece3cc,bg:#fbf3db,spinner:#00978a,hl:#006dce"\
+" --color=fg:#909995,header:#006dce,info:#a78300,pointer:#00978a"\
+" --color=marker:#00978a,fg+:#3a4d53,prompt:#a78300,hl+:#006dce"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# zoxide - smarter cd command
+eval "$(zoxide init zsh)"
+
+# starship - universal prompt
+eval "$(starship init zsh)"
+
+# work-specific configs
+[ -e ~/.workrc ] && source ~/.workrc

@@ -1,0 +1,4 @@
+theme = Selenized Light
+font-size = 14
+# default closes window, so instead close pane before window
+keybind = performable:super+w=close_surface

@@ -1,0 +1,4 @@
+[directory]
+# shorten prefix directories like fish
+fish_style_pwd_dir_length = 1
+
