@@ -33,7 +33,7 @@ setopt INC_APPEND_HISTORY        # Write immediately, not on shell exit
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
   autoload -Uz compinit
-  compinit
+  compinit -u
 fi
 
 # zsh plugins - syntax-highlighting must be last
@@ -58,7 +58,6 @@ alias ls="ls -lh -GFp"
 alias sl='ls'
 alias grep='grep --color=auto'
 alias diff='diff -u'
-alias z='zoxide'
 
 # fzf - fuzzy finder
 export FZF_DEFAULT_COMMAND="fd --type f"
@@ -70,7 +69,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # zoxide - smarter cd command
-eval "$(zoxide init zsh)"
+eval "$(zoxide init zsh --cmd j)"
 
 # starship - universal prompt
 eval "$(starship init zsh)"
