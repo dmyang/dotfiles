@@ -1,4 +1,14 @@
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_state\
+$status\
+$cmd_duration\
+$line_break\
+$character"""
+
 [directory]
-# shorten prefix directories like fish
-fish_style_pwd_dir_length = 1
+fish_style_pwd_dir_length = 1 # shorten prefix directories like fish
 
